@@ -24,6 +24,8 @@ spec:
         app: echo
         version: v1
     spec:
+      securityContext:
+        runAsNonRoot: true
       containers:
         - name: echo
           image: registry.k8s.io/gateway-api/conformance/echo-advanced:v0.1.0
@@ -89,6 +91,8 @@ spec:
         app: echo
         version: v2
     spec:
+      securityContext:
+        runAsNonRoot: true
       containers:
         - name: echo
           image: registry.k8s.io/gateway-api/conformance/echo-advanced:v0.1.0
@@ -186,6 +190,8 @@ spec:
         app: echo
         version: v1
     spec:
+      securityContext:
+        runAsNonRoot: true
       containers:
         - name: echo
           image: registry.k8s.io/gateway-api/conformance/echo-advanced:v0.1.0
