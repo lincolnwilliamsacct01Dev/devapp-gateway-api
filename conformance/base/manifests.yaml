@@ -162,6 +162,8 @@ spec:
       labels:
         app: infra-backend-v1
     spec:
+      securityContext:
+        runAsNonRoot: true
       containers:
         - name: infra-backend-v1
           # Originally from https://github.com/kubernetes-sigs/ingress-controller-conformance/tree/master/images/echoserver
@@ -209,6 +211,8 @@ spec:
       labels:
         app: infra-backend-v2
     spec:
+      securityContext:
+        runAsNonRoot: true
       containers:
         - name: infra-backend-v2
           image: registry.k8s.io/gateway-api/conformance/echo-basic:v0.1.0
@@ -257,6 +261,8 @@ spec:
       labels:
         app: infra-backend-v3
     spec:
+      securityContext:
+        runAsNonRoot: true
       containers:
         - name: infra-backend-v3
           image: registry.k8s.io/gateway-api/conformance/echo-basic:v0.1.0
@@ -365,6 +371,8 @@ spec:
       labels:
         app: tls-backend-2
     spec:
+      securityContext:
+        runAsNonRoot: true
       containers:
         - name: tls-backend-2
           image: registry.k8s.io/gateway-api/conformance/echo-basic:v0.1.0
@@ -434,6 +442,8 @@ spec:
       labels:
         app: tls-backend
     spec:
+      securityContext:
+        runAsNonRoot: true
       containers:
         - name: tls-backend
           image: registry.k8s.io/gateway-api/conformance/echo-basic:v0.1.0
@@ -496,6 +506,8 @@ spec:
       labels:
         app: app-backend-v1
     spec:
+      securityContext:
+        runAsNonRoot: true
       containers:
         - name: app-backend-v1
           image: registry.k8s.io/gateway-api/conformance/echo-basic:v0.1.0
@@ -542,6 +554,8 @@ spec:
       labels:
         app: app-backend-v2
     spec:
+      securityContext:
+        runAsNonRoot: true
       containers:
         - name: app-backend-v2
           image: registry.k8s.io/gateway-api/conformance/echo-basic:v0.1.0
@@ -595,6 +609,8 @@ spec:
       labels:
         app: web-backend
     spec:
+      securityContext:
+        runAsNonRoot: true
       containers:
         - name: web-backend
           image: registry.k8s.io/gateway-api/conformance/echo-basic:v0.1.0
@@ -642,6 +658,8 @@ spec:
       labels:
         app: grpc-infra-backend-v1
     spec:
+      securityContext:
+        runAsNonRoot: true
       containers:
         - name: grpc-infra-backend-v1
           image: registry.k8s.io/gateway-api/conformance/echo-basic:v0.1.0
@@ -707,6 +725,8 @@ spec:
       labels:
         app: grpc-infra-backend-v2
     spec:
+      securityContext:
+        runAsNonRoot: true
       containers:
         - name: grpc-infra-backend-v2
           image: registry.k8s.io/gateway-api/conformance/echo-basic:v0.1.0
@@ -756,6 +776,8 @@ spec:
       labels:
         app: grpc-infra-backend-v3
     spec:
+      securityContext:
+        runAsNonRoot: true
       containers:
         - name: grpc-infra-backend-v3
           image: registry.k8s.io/gateway-api/conformance/echo-basic:v0.1.0
@@ -806,6 +828,8 @@ spec:
       labels:
         app: udp
     spec:
+      securityContext:
+        runAsNonRoot: true
       containers:
         - args:
             - -conf
@@ -880,6 +904,8 @@ spec:
       labels:
         app: tcp-backend
     spec:
+      securityContext:
+        runAsNonRoot: true
       containers:
         - name: tcp-backend
           image: registry.k8s.io/gateway-api/conformance/echo-basic:v0.1.0
