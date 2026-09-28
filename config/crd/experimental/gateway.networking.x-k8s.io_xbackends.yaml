@@ -53,6 +53,42 @@ spec:
           spec:
             description: Spec defines the desired state of XBackend.
             properties:
+              endpointSelector:
+                description: |-
+                  EndpointSelector specifies the configuration for an EndpointSelector
+                  backend. This field must be set when type is EndpointSelector and must
+                  be unset otherwise.
+                properties:
+                  matchLabels:
+                    additionalProperties:
+                      description: |-
+                        LabelValue is the value of a label in the Gateway API. This is used for validation
+                        of maps such as Gateway infrastructure labels. This matches the Kubernetes
+                        label validation rules:
+                        * must be 63 characters or less (can be empty),
+                        * unless empty, must begin and end with an alphanumeric character ([a-z0-9A-Z]),
+                        * could contain dashes (-), underscores (_), dots (.), and alphanumerics between.
+
+                        Valid values include:
+
+                        * MyValue
+                        * my.name
+                        * 123-my-value
+                      maxLength: 63
+                      minLength: 0
+                      pattern: ^(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?$
+                      type: string
+                    description: |-
+                      MatchLabels contains a set of required {key,value} pairs.
+                      An object must match every label in this map to be selected.
+                      The matching logic is an AND operation on all entries.
+                    maxProperties: 64
+                    minProperties: 1
+                    type: object
+                required:
+                - ""
+                - matchLabels
+                type: object
               externalHostname:
                 description: |-
                   ExternalHostname specifies the configuration for an ExternalHostname
@@ -77,28 +113,17 @@ spec:
                 type: object
               port:
                 description: |-
-                  Port defines the port that the implementation should use when connecting
-                  to this backend.
+                  Port defines the port to connect to on this backend.
+                  For ExternalHostname, this is the port on the external host.
+                  For EndpointSelector, this specifies which endpoint port to connect to.
+                minProperties: 1
                 properties:
-                  name:
-                    description: |-
-                      Name represents the name of this port. All ports in a Backend must have
-                      a unique name. Name must either be an empty string or pass DNS_LABEL
-                      validation (lowercase alphanumeric or '-', starting and ending with an
-                      alphanumeric character, at most 63 characters).
-                    maxLength: 63
-                    type: string
-                    x-kubernetes-validations:
-                    - message: Name must be a valid DNS label
-                      rule: size(self) == 0 || !format.dns1123Label().validate(self).hasValue()
-                  port:
-                    description: Port represents the port number of the endpoint.
+                  number:
+                    description: Number represents the port number of the destination.
                     format: int32
                     maximum: 65535
                     minimum: 1
                     type: integer
-                required:
-                - port
                 type: object
               protocol:
                 description: |-
@@ -124,6 +149,7 @@ spec:
                 - HTTP11
                 - H2C
                 - MCP
+                - GRPC
                 type: string
               tls:
                 description: |-
@@ -405,6 +431,7 @@ spec:
                 description: Type defines the backend type.
                 enum:
                 - ExternalHostname
+                - EndpointSelector
                 type: string
             required:
             - port
@@ -415,24 +442,30 @@ spec:
                 and must be unset otherwise
               rule: 'self.type == ''ExternalHostname'' ? has(self.externalHostname)
                 : !has(self.externalHostname)'
+            - message: endpointSelector must be set when type is EndpointSelector
+                and must be unset otherwise
+              rule: 'self.type == ''EndpointSelector'' ? has(self.endpointSelector)
+                : !has(self.endpointSelector)'
           status:
             description: Status defines the current state of XBackend.
             properties:
-              parents:
+              ancestors:
                 description: |-
-                  Ancestors is a list of parent resources associated with this Backend,
-                  and the status of the Backend with respect to each parent.
+                  Ancestors is a list of ancestor resources (usually Gateways) that are
+                  associated with this Backend, and the status of the Backend with respect
+                  to each ancestor.
 
-                  A maximum of 32 parents will be represented in this list. An empty list
-                  indicates that the Backend is not associated with any parents.
+                  A maximum of 32 ancestors will be represented in this list. An empty list
+                  indicates that the Backend is not associated with any ancestors.
                 items:
                   description: |-
                     BackendAncestorStatus describes the status of a Backend with respect to a
-                    specific parent resource (typically a Gateway).
+                    specific ancestor resource (typically a Gateway).
                   properties:
                     ancestorRef:
-                      description: AncestorRef identifies the parent resource that
-                        this status is associated with.
+                      description: |-
+                        AncestorRef identifies the ancestor resource that this status is
+                        associated with.
                       properties:
                         group:
                           default: gateway.networking.k8s.io
@@ -574,7 +607,7 @@ spec:
                         Each condition has a unique type and reflects the status of a specific aspect of the resource.
 
                         Defined condition types include:
-                        - "Accepted": the resource has been acknowledged and accepteed by the controller
+                        - "Accepted": the resource has been acknowledged and accepted by the controller
 
                         The status of each condition is one of True, False, or Unknown.
                       items:

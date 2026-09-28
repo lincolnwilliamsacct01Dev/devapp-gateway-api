@@ -27,7 +27,7 @@ import (
 //
 // GRPCRouteSpec defines the desired state of GRPCRoute
 type GRPCRouteSpecApplyConfiguration struct {
-	CommonRouteSpecApplyConfiguration `json:",inline"`
+	CommonRouteSpecApplyConfiguration `json:""`
 	// Hostnames defines a set of hostnames to match against the GRPC
 	// Host header to select a GRPCRoute to process the request. This matches
 	// the RFC 1123 definition of a hostname with 2 notable exceptions:
@@ -67,8 +67,9 @@ type GRPCRouteSpecApplyConfiguration struct {
 	// If a Route (A) of type HTTPRoute or GRPCRoute is attached to a
 	// Listener and that listener already has another Route (B) of the other
 	// type attached and the intersection of the hostnames of A and B is
-	// non-empty, then the implementation MUST accept exactly one of these two
-	// routes, determined by the following criteria, in order:
+	// non-empty, then the implementation MAY reject one of the two routes.
+	// An implementation that does so MUST accept exactly one of them,
+	// determined by the following criteria, in order:
 	//
 	// * The oldest Route based on creation timestamp.
 	// * The Route appearing first in alphabetical order by

@@ -241,7 +241,9 @@ func GetOpenAPIDefinitions(ref common.ReferenceCallback) map[string]common.OpenA
 		"sigs.k8s.io/gateway-api/apisx/v1alpha1.BackendTLS":                               schema_sigsk8sio_gateway_api_apisx_v1alpha1_BackendTLS(ref),
 		"sigs.k8s.io/gateway-api/apisx/v1alpha1.BackendTrafficPolicySpec":                 schema_sigsk8sio_gateway_api_apisx_v1alpha1_BackendTrafficPolicySpec(ref),
 		"sigs.k8s.io/gateway-api/apisx/v1alpha1.BudgetDetails":                            schema_sigsk8sio_gateway_api_apisx_v1alpha1_BudgetDetails(ref),
+		"sigs.k8s.io/gateway-api/apisx/v1alpha1.EndpointSelectorBackend":                  schema_sigsk8sio_gateway_api_apisx_v1alpha1_EndpointSelectorBackend(ref),
 		"sigs.k8s.io/gateway-api/apisx/v1alpha1.ExternalHostnameBackend":                  schema_sigsk8sio_gateway_api_apisx_v1alpha1_ExternalHostnameBackend(ref),
+		"sigs.k8s.io/gateway-api/apisx/v1alpha1.LabelSelector":                            schema_sigsk8sio_gateway_api_apisx_v1alpha1_LabelSelector(ref),
 		"sigs.k8s.io/gateway-api/apisx/v1alpha1.MeshSpec":                                 schema_sigsk8sio_gateway_api_apisx_v1alpha1_MeshSpec(ref),
 		"sigs.k8s.io/gateway-api/apisx/v1alpha1.MeshStatus":                               schema_sigsk8sio_gateway_api_apisx_v1alpha1_MeshStatus(ref),
 		"sigs.k8s.io/gateway-api/apisx/v1alpha1.RequestRate":                              schema_sigsk8sio_gateway_api_apisx_v1alpha1_RequestRate(ref),
@@ -296,8 +298,7 @@ func schema_pkg_apis_meta_v1_APIGroup(ref common.ReferenceCallback) common.OpenA
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref(v1.GroupVersionForDiscovery{}.OpenAPIModelName()),
+										Ref: ref(v1.GroupVersionForDiscovery{}.OpenAPIModelName()),
 									},
 								},
 							},
@@ -322,8 +323,7 @@ func schema_pkg_apis_meta_v1_APIGroup(ref common.ReferenceCallback) common.OpenA
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref(v1.ServerAddressByClientCIDR{}.OpenAPIModelName()),
+										Ref: ref(v1.ServerAddressByClientCIDR{}.OpenAPIModelName()),
 									},
 								},
 							},
@@ -371,8 +371,7 @@ func schema_pkg_apis_meta_v1_APIGroupList(ref common.ReferenceCallback) common.O
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref(v1.APIGroup{}.OpenAPIModelName()),
+										Ref: ref(v1.APIGroup{}.OpenAPIModelName()),
 									},
 								},
 							},
@@ -447,9 +446,8 @@ func schema_pkg_apis_meta_v1_APIResource(ref common.ReferenceCallback) common.Op
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: "",
-										Type:    []string{"string"},
-										Format:  "",
+										Type:   []string{"string"},
+										Format: "",
 									},
 								},
 							},
@@ -467,9 +465,8 @@ func schema_pkg_apis_meta_v1_APIResource(ref common.ReferenceCallback) common.Op
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: "",
-										Type:    []string{"string"},
-										Format:  "",
+										Type:   []string{"string"},
+										Format: "",
 									},
 								},
 							},
@@ -487,9 +484,8 @@ func schema_pkg_apis_meta_v1_APIResource(ref common.ReferenceCallback) common.Op
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: "",
-										Type:    []string{"string"},
-										Format:  "",
+										Type:   []string{"string"},
+										Format: "",
 									},
 								},
 							},
@@ -550,8 +546,7 @@ func schema_pkg_apis_meta_v1_APIResourceList(ref common.ReferenceCallback) commo
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref(v1.APIResource{}.OpenAPIModelName()),
+										Ref: ref(v1.APIResource{}.OpenAPIModelName()),
 									},
 								},
 							},
@@ -599,9 +594,8 @@ func schema_pkg_apis_meta_v1_APIVersions(ref common.ReferenceCallback) common.Op
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: "",
-										Type:    []string{"string"},
-										Format:  "",
+										Type:   []string{"string"},
+										Format: "",
 									},
 								},
 							},
@@ -619,8 +613,7 @@ func schema_pkg_apis_meta_v1_APIVersions(ref common.ReferenceCallback) common.Op
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref(v1.ServerAddressByClientCIDR{}.OpenAPIModelName()),
+										Ref: ref(v1.ServerAddressByClientCIDR{}.OpenAPIModelName()),
 									},
 								},
 							},
@@ -668,9 +661,8 @@ func schema_pkg_apis_meta_v1_ApplyOptions(ref common.ReferenceCallback) common.O
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: "",
-										Type:    []string{"string"},
-										Format:  "",
+										Type:   []string{"string"},
+										Format: "",
 									},
 								},
 							},
@@ -793,9 +785,8 @@ func schema_pkg_apis_meta_v1_CreateOptions(ref common.ReferenceCallback) common.
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: "",
-										Type:    []string{"string"},
-										Format:  "",
+										Type:   []string{"string"},
+										Format: "",
 									},
 								},
 							},
@@ -881,9 +872,8 @@ func schema_pkg_apis_meta_v1_DeleteOptions(ref common.ReferenceCallback) common.
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: "",
-										Type:    []string{"string"},
-										Format:  "",
+										Type:   []string{"string"},
+										Format: "",
 									},
 								},
 							},
@@ -951,9 +941,8 @@ func schema_pkg_apis_meta_v1_FieldSelectorRequirement(ref common.ReferenceCallba
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: "",
-										Type:    []string{"string"},
-										Format:  "",
+										Type:   []string{"string"},
+										Format: "",
 									},
 								},
 							},
@@ -1236,9 +1225,8 @@ func schema_pkg_apis_meta_v1_LabelSelector(ref common.ReferenceCallback) common.
 								Allows: true,
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: "",
-										Type:    []string{"string"},
-										Format:  "",
+										Type:   []string{"string"},
+										Format: "",
 									},
 								},
 							},
@@ -1256,8 +1244,7 @@ func schema_pkg_apis_meta_v1_LabelSelector(ref common.ReferenceCallback) common.
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref(v1.LabelSelectorRequirement{}.OpenAPIModelName()),
+										Ref: ref(v1.LabelSelectorRequirement{}.OpenAPIModelName()),
 									},
 								},
 							},
@@ -1311,9 +1298,8 @@ func schema_pkg_apis_meta_v1_LabelSelectorRequirement(ref common.ReferenceCallba
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: "",
-										Type:    []string{"string"},
-										Format:  "",
+										Type:   []string{"string"},
+										Format: "",
 									},
 								},
 							},
@@ -1686,9 +1672,8 @@ func schema_pkg_apis_meta_v1_ObjectMeta(ref common.ReferenceCallback) common.Ope
 								Allows: true,
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: "",
-										Type:    []string{"string"},
-										Format:  "",
+										Type:   []string{"string"},
+										Format: "",
 									},
 								},
 							},
@@ -1702,9 +1687,8 @@ func schema_pkg_apis_meta_v1_ObjectMeta(ref common.ReferenceCallback) common.Ope
 								Allows: true,
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: "",
-										Type:    []string{"string"},
-										Format:  "",
+										Type:   []string{"string"},
+										Format: "",
 									},
 								},
 							},
@@ -1727,8 +1711,7 @@ func schema_pkg_apis_meta_v1_ObjectMeta(ref common.ReferenceCallback) common.Ope
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref(v1.OwnerReference{}.OpenAPIModelName()),
+										Ref: ref(v1.OwnerReference{}.OpenAPIModelName()),
 									},
 								},
 							},
@@ -1747,9 +1730,8 @@ func schema_pkg_apis_meta_v1_ObjectMeta(ref common.ReferenceCallback) common.Ope
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: "",
-										Type:    []string{"string"},
-										Format:  "",
+										Type:   []string{"string"},
+										Format: "",
 									},
 								},
 							},
@@ -1767,8 +1749,7 @@ func schema_pkg_apis_meta_v1_ObjectMeta(ref common.ReferenceCallback) common.Ope
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref(v1.ManagedFieldsEntry{}.OpenAPIModelName()),
+										Ref: ref(v1.ManagedFieldsEntry{}.OpenAPIModelName()),
 									},
 								},
 							},
@@ -1918,8 +1899,7 @@ func schema_pkg_apis_meta_v1_PartialObjectMetadataList(ref common.ReferenceCallb
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref(v1.PartialObjectMetadata{}.OpenAPIModelName()),
+										Ref: ref(v1.PartialObjectMetadata{}.OpenAPIModelName()),
 									},
 								},
 							},
@@ -1978,9 +1958,8 @@ func schema_pkg_apis_meta_v1_PatchOptions(ref common.ReferenceCallback) common.O
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: "",
-										Type:    []string{"string"},
-										Format:  "",
+										Type:   []string{"string"},
+										Format: "",
 									},
 								},
 							},
@@ -2059,9 +2038,8 @@ func schema_pkg_apis_meta_v1_RootPaths(ref common.ReferenceCallback) common.Open
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: "",
-										Type:    []string{"string"},
-										Format:  "",
+										Type:   []string{"string"},
+										Format: "",
 									},
 								},
 							},
@@ -2277,8 +2255,7 @@ func schema_pkg_apis_meta_v1_StatusDetails(ref common.ReferenceCallback) common.
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref(v1.StatusCause{}.OpenAPIModelName()),
+										Ref: ref(v1.StatusCause{}.OpenAPIModelName()),
 									},
 								},
 							},
@@ -2339,8 +2316,7 @@ func schema_pkg_apis_meta_v1_Table(ref common.ReferenceCallback) common.OpenAPID
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref(v1.TableColumnDefinition{}.OpenAPIModelName()),
+										Ref: ref(v1.TableColumnDefinition{}.OpenAPIModelName()),
 									},
 								},
 							},
@@ -2358,8 +2334,7 @@ func schema_pkg_apis_meta_v1_Table(ref common.ReferenceCallback) common.OpenAPID
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref(v1.TableRow{}.OpenAPIModelName()),
+										Ref: ref(v1.TableRow{}.OpenAPIModelName()),
 									},
 								},
 							},
@@ -2500,8 +2475,7 @@ func schema_pkg_apis_meta_v1_TableRow(ref common.ReferenceCallback) common.OpenA
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref(v1.TableRowCondition{}.OpenAPIModelName()),
+										Ref: ref(v1.TableRowCondition{}.OpenAPIModelName()),
 									},
 								},
 							},
@@ -2668,9 +2642,8 @@ func schema_pkg_apis_meta_v1_UpdateOptions(ref common.ReferenceCallback) common.
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: "",
-										Type:    []string{"string"},
-										Format:  "",
+										Type:   []string{"string"},
+										Format: "",
 									},
 								},
 							},
@@ -2729,7 +2702,7 @@ func schema_k8sio_apimachinery_pkg_runtime_RawExtension(ref common.ReferenceCall
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "RawExtension is used to hold extensions in external versions.\n\nTo use this, make a field which has RawExtension as its type in your external, versioned struct, and Object in your internal struct. You also need to register your various plugin types.\n\n// Internal package:\n\n\ttype MyAPIObject struct {\n\t\truntime.TypeMeta `json:\",inline\"`\n\t\tMyPlugin runtime.Object `json:\"myPlugin\"`\n\t}\n\n\ttype PluginA struct {\n\t\tAOption string `json:\"aOption\"`\n\t}\n\n// External package:\n\n\ttype MyAPIObject struct {\n\t\truntime.TypeMeta `json:\",inline\"`\n\t\tMyPlugin runtime.RawExtension `json:\"myPlugin\"`\n\t}\n\n\ttype PluginA struct {\n\t\tAOption string `json:\"aOption\"`\n\t}\n\n// On the wire, the JSON will look something like this:\n\n\t{\n\t\t\"kind\":\"MyAPIObject\",\n\t\t\"apiVersion\":\"v1\",\n\t\t\"myPlugin\": {\n\t\t\t\"kind\":\"PluginA\",\n\t\t\t\"aOption\":\"foo\",\n\t\t},\n\t}\n\nSo what happens? Decode first uses json or yaml to unmarshal the serialized data into your external MyAPIObject. That causes the raw JSON to be stored, but not unpacked. The next step is to copy (using pkg/conversion) into the internal struct. The runtime package's DefaultScheme has conversion functions installed which will unpack the JSON stored in RawExtension, turning it into the correct object type, and storing it in the Object. (TODO: In the case where the object is of an unknown type, a runtime.Unknown object will be created and stored.)",
+				Description: "RawExtension is used to hold extensions in external versions.\n\nTo use this, make a field which has RawExtension as its type in your external, versioned struct, and Object in your internal struct. You also need to register your various plugin types.\n\n// Internal package:\n\n\ttype MyAPIObject struct {\n\t\truntime.TypeMeta `json:\"\"`\n\t\tMyPlugin runtime.Object `json:\"myPlugin\"`\n\t}\n\n\ttype PluginA struct {\n\t\tAOption string `json:\"aOption\"`\n\t}\n\n// External package:\n\n\ttype MyAPIObject struct {\n\t\truntime.TypeMeta `json:\"\"`\n\t\tMyPlugin runtime.RawExtension `json:\"myPlugin\"`\n\t}\n\n\ttype PluginA struct {\n\t\tAOption string `json:\"aOption\"`\n\t}\n\n// On the wire, the JSON will look something like this:\n\n\t{\n\t\t\"kind\":\"MyAPIObject\",\n\t\t\"apiVersion\":\"v1\",\n\t\t\"myPlugin\": {\n\t\t\t\"kind\":\"PluginA\",\n\t\t\t\"aOption\":\"foo\",\n\t\t},\n\t}\n\nSo what happens? Decode first uses json or yaml to unmarshal the serialized data into your external MyAPIObject. That causes the raw JSON to be stored, but not unpacked. The next step is to copy (using pkg/conversion) into the internal struct. The runtime package's DefaultScheme has conversion functions installed which will unpack the JSON stored in RawExtension, turning it into the correct object type, and storing it in the Object. (TODO: In the case where the object is of an unknown type, a runtime.Unknown object will be created and stored.)",
 				Type:        []string{"object"},
 			},
 		},
@@ -2740,7 +2713,7 @@ func schema_k8sio_apimachinery_pkg_runtime_TypeMeta(ref common.ReferenceCallback
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "TypeMeta is shared by all top level objects. The proper way to use it is to inline it in your type, like this:\n\n\ttype MyAwesomeAPIObject struct {\n\t     runtime.TypeMeta    `json:\",inline\"`\n\t     ... // other fields\n\t}\n\nfunc (obj *MyAwesomeAPIObject) SetGroupVersionKind(gvk *metav1.GroupVersionKind) { metav1.UpdateTypeMeta(obj,gvk) }; GroupVersionKind() *GroupVersionKind\n\nTypeMeta is provided here for convenience. You may use it directly from this package or define your own with the same fields.",
+				Description: "TypeMeta is shared by all top level objects. The proper way to use it is to inline it in your type, like this:\n\n\ttype MyAwesomeAPIObject struct {\n\t     runtime.TypeMeta    `json:\"\"`\n\t     ... // other fields\n\t}\n\nfunc (obj *MyAwesomeAPIObject) SetGroupVersionKind(gvk *metav1.GroupVersionKind) { metav1.UpdateTypeMeta(obj,gvk) }; GroupVersionKind() *GroupVersionKind\n\nTypeMeta is provided here for convenience. You may use it directly from this package or define your own with the same fields.",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"apiVersion": {
@@ -2956,8 +2929,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_AllowedRoutes(ref common.ReferenceCall
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.RouteGroupKind"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.RouteGroupKind"),
 									},
 								},
 							},
@@ -2975,7 +2947,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_BackendObjectReference(ref common.Refe
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "BackendObjectReference defines how an ObjectReference that is specific to BackendRef. It includes a few additional fields and features than a regular ObjectReference.\n\nNote that when a namespace different than the local namespace is specified, a ReferenceGrant object is required in the referent namespace to allow that namespace's owner to accept the reference. See the ReferenceGrant documentation for details.\n\nThe API object must be valid in the cluster; the Group and Kind must be registered in the cluster for this reference to be valid.\n\nReferences to objects with invalid Group and Kind are not valid, and must be rejected by the implementation, with appropriate Conditions set on the containing object.\n\nIf the backend service requires TLS, use BackendTLSPolicy to tell the implementation to supply the TLS details to be used to connect to that backend.",
+				Description: "BackendObjectReference defines how an ObjectReference that is specific to BackendRef. It includes a few additional fields and features than a regular ObjectReference.\n\nNote that when a namespace different than the local namespace is specified, a ReferenceGrant object is required in the referent namespace to allow that namespace's owner to accept the reference. See the ReferenceGrant documentation for details.\n\nThe API object must be valid in the cluster; the Group and Kind must be registered in the cluster for this reference to be valid.\n\nReferences to objects with invalid Group and Kind are not valid, and must be rejected by the implementation, with appropriate Conditions set on the containing object.\n\nIf the backend service requires TLS, use BackendTLSPolicy to tell the implementation to supply the TLS details to be used to connect to that backend.\n\n<gateway:experimental:validation:XValidation:message=\"Must not have port for Backend reference\",rule=\"(self.group == 'gateway.networking.x-k8s.io' && self.kind == 'XBackend') ? !has(self.port) : true\">",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"group": {
@@ -3161,8 +3133,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_BackendTLSPolicyList(ref common.Refere
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.BackendTLSPolicy"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.BackendTLSPolicy"),
 									},
 								},
 							},
@@ -3196,8 +3167,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_BackendTLSPolicySpec(ref common.Refere
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.LocalPolicyTargetReferenceWithSectionName"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.LocalPolicyTargetReferenceWithSectionName"),
 									},
 								},
 							},
@@ -3218,9 +3188,8 @@ func schema_sigsk8sio_gateway_api_apis_v1_BackendTLSPolicySpec(ref common.Refere
 								Allows: true,
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: "",
-										Type:    []string{"string"},
-										Format:  "",
+										Type:   []string{"string"},
+										Format: "",
 									},
 								},
 							},
@@ -3254,8 +3223,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_BackendTLSPolicyValidation(ref common.
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.LocalObjectReference"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.LocalObjectReference"),
 									},
 								},
 							},
@@ -3288,8 +3256,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_BackendTLSPolicyValidation(ref common.
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.SubjectAltName"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.SubjectAltName"),
 									},
 								},
 							},
@@ -3323,8 +3290,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_CommonRouteSpec(ref common.ReferenceCa
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.ParentReference"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.ParentReference"),
 									},
 								},
 							},
@@ -3454,8 +3420,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_FrontendTLSConfig(ref common.Reference
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.TLSPortConfig"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.TLSPortConfig"),
 									},
 								},
 							},
@@ -3489,8 +3454,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_FrontendTLSValidation(ref common.Refer
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.ObjectReference"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.ObjectReference"),
 									},
 								},
 							},
@@ -3531,9 +3495,8 @@ func schema_sigsk8sio_gateway_api_apis_v1_GRPCAuthConfig(ref common.ReferenceCal
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: "",
-										Type:    []string{"string"},
-										Format:  "",
+										Type:   []string{"string"},
+										Format: "",
 									},
 								},
 							},
@@ -3607,8 +3570,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_GRPCBackendRef(ref common.ReferenceCal
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.GRPCRouteFilter"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.GRPCRouteFilter"),
 									},
 								},
 							},
@@ -3825,8 +3787,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_GRPCRouteList(ref common.ReferenceCall
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.GRPCRoute"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.GRPCRoute"),
 									},
 								},
 							},
@@ -3869,8 +3830,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_GRPCRouteMatch(ref common.ReferenceCal
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.GRPCHeaderMatch"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.GRPCHeaderMatch"),
 									},
 								},
 							},
@@ -3910,8 +3870,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_GRPCRouteRule(ref common.ReferenceCall
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.GRPCRouteMatch"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.GRPCRouteMatch"),
 									},
 								},
 							},
@@ -3929,8 +3888,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_GRPCRouteRule(ref common.ReferenceCall
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.GRPCRouteFilter"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.GRPCRouteFilter"),
 									},
 								},
 							},
@@ -3948,8 +3906,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_GRPCRouteRule(ref common.ReferenceCall
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.GRPCBackendRef"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.GRPCBackendRef"),
 									},
 								},
 							},
@@ -3957,7 +3914,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_GRPCRouteRule(ref common.ReferenceCall
 					},
 					"sessionPersistence": {
 						SchemaProps: spec.SchemaProps{
-							Description: "SessionPersistence defines and configures session persistence for the route rule.\n\nSupport: Extended\n\n<gateway:experimental>",
+							Description: "Deprecated: use the Backend resource for session persistence (GEP-4894).\n\nSessionPersistence defines and configures session persistence for the route rule.\n\nSupport: Extended\n\n<gateway:experimental>",
 							Ref:         ref("sigs.k8s.io/gateway-api/apis/v1.SessionPersistence"),
 						},
 					},
@@ -3988,8 +3945,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_GRPCRouteSpec(ref common.ReferenceCall
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.ParentReference"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.ParentReference"),
 									},
 								},
 							},
@@ -4009,14 +3965,13 @@ func schema_sigsk8sio_gateway_api_apis_v1_GRPCRouteSpec(ref common.ReferenceCall
 							},
 						},
 						SchemaProps: spec.SchemaProps{
-							Description: "Hostnames defines a set of hostnames to match against the GRPC Host header to select a GRPCRoute to process the request. This matches the RFC 1123 definition of a hostname with 2 notable exceptions:\n\n1. IPs are not allowed. 2. A hostname may be prefixed with a wildcard label (`*.`). The wildcard\n   label MUST appear by itself as the first label.\n\nIf a hostname is specified by both the Listener and GRPCRoute, there MUST be at least one intersecting hostname for the GRPCRoute to be attached to the Listener. For example:\n\n* A Listener with `test.example.com` as the hostname matches GRPCRoutes\n  that have either not specified any hostnames, or have specified at\n  least one of `test.example.com` or `*.example.com`.\n* A Listener with `*.example.com` as the hostname matches GRPCRoutes\n  that have either not specified any hostnames or have specified at least\n  one hostname that matches the Listener hostname. For example,\n  `test.example.com` and `*.example.com` would both match. On the other\n  hand, `example.com` and `test.example.net` would not match.\n\nHostnames that are prefixed with a wildcard label (`*.`) are interpreted as a suffix match. That means that a match for `*.example.com` would match both `test.example.com`, and `foo.test.example.com`, but not `example.com`.\n\nIf both the Listener and GRPCRoute have specified hostnames, any GRPCRoute hostnames that do not match the Listener hostname MUST be ignored. For example, if a Listener specified `*.example.com`, and the GRPCRoute specified `test.example.com` and `test.example.net`, `test.example.net` MUST NOT be considered for a match.\n\nIf both the Listener and GRPCRoute have specified hostnames, and none match with the criteria above, then the GRPCRoute MUST NOT be accepted by the implementation. The implementation MUST raise an 'Accepted' Condition with a status of `False` in the corresponding RouteParentStatus.\n\nIf a Route (A) of type HTTPRoute or GRPCRoute is attached to a Listener and that listener already has another Route (B) of the other type attached and the intersection of the hostnames of A and B is non-empty, then the implementation MUST accept exactly one of these two routes, determined by the following criteria, in order:\n\n* The oldest Route based on creation timestamp. * The Route appearing first in alphabetical order by\n  \"{namespace}/{name}\".\n\nThe rejected Route MUST raise an 'Accepted' condition with a status of 'False' in the corresponding RouteParentStatus.\n\nSupport: Core",
+							Description: "Hostnames defines a set of hostnames to match against the GRPC Host header to select a GRPCRoute to process the request. This matches the RFC 1123 definition of a hostname with 2 notable exceptions:\n\n1. IPs are not allowed. 2. A hostname may be prefixed with a wildcard label (`*.`). The wildcard\n   label MUST appear by itself as the first label.\n\nIf a hostname is specified by both the Listener and GRPCRoute, there MUST be at least one intersecting hostname for the GRPCRoute to be attached to the Listener. For example:\n\n* A Listener with `test.example.com` as the hostname matches GRPCRoutes\n  that have either not specified any hostnames, or have specified at\n  least one of `test.example.com` or `*.example.com`.\n* A Listener with `*.example.com` as the hostname matches GRPCRoutes\n  that have either not specified any hostnames or have specified at least\n  one hostname that matches the Listener hostname. For example,\n  `test.example.com` and `*.example.com` would both match. On the other\n  hand, `example.com` and `test.example.net` would not match.\n\nHostnames that are prefixed with a wildcard label (`*.`) are interpreted as a suffix match. That means that a match for `*.example.com` would match both `test.example.com`, and `foo.test.example.com`, but not `example.com`.\n\nIf both the Listener and GRPCRoute have specified hostnames, any GRPCRoute hostnames that do not match the Listener hostname MUST be ignored. For example, if a Listener specified `*.example.com`, and the GRPCRoute specified `test.example.com` and `test.example.net`, `test.example.net` MUST NOT be considered for a match.\n\nIf both the Listener and GRPCRoute have specified hostnames, and none match with the criteria above, then the GRPCRoute MUST NOT be accepted by the implementation. The implementation MUST raise an 'Accepted' Condition with a status of `False` in the corresponding RouteParentStatus.\n\nIf a Route (A) of type HTTPRoute or GRPCRoute is attached to a Listener and that listener already has another Route (B) of the other type attached and the intersection of the hostnames of A and B is non-empty, then the implementation MAY reject one of the two routes. An implementation that does so MUST accept exactly one of them, determined by the following criteria, in order:\n\n* The oldest Route based on creation timestamp. * The Route appearing first in alphabetical order by\n  \"{namespace}/{name}\".\n\nThe rejected Route MUST raise an 'Accepted' condition with a status of 'False' in the corresponding RouteParentStatus.\n\nSupport: Core",
 							Type:        []string{"array"},
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: "",
-										Type:    []string{"string"},
-										Format:  "",
+										Type:   []string{"string"},
+										Format: "",
 									},
 								},
 							},
@@ -4034,8 +3989,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_GRPCRouteSpec(ref common.ReferenceCall
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.GRPCRouteRule"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.GRPCRouteRule"),
 									},
 								},
 							},
@@ -4068,8 +4022,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_GRPCRouteStatus(ref common.ReferenceCa
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.RouteParentStatus"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.RouteParentStatus"),
 									},
 								},
 							},
@@ -4238,8 +4191,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_GatewayClassList(ref common.ReferenceC
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.GatewayClass"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.GatewayClass"),
 									},
 								},
 							},
@@ -4313,8 +4265,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_GatewayClassStatus(ref common.Referenc
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref(v1.Condition{}.OpenAPIModelName()),
+										Ref: ref(v1.Condition{}.OpenAPIModelName()),
 									},
 								},
 							},
@@ -4364,9 +4315,8 @@ func schema_sigsk8sio_gateway_api_apis_v1_GatewayInfrastructure(ref common.Refer
 								Allows: true,
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: "",
-										Type:    []string{"string"},
-										Format:  "",
+										Type:   []string{"string"},
+										Format: "",
 									},
 								},
 							},
@@ -4380,9 +4330,8 @@ func schema_sigsk8sio_gateway_api_apis_v1_GatewayInfrastructure(ref common.Refer
 								Allows: true,
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: "",
-										Type:    []string{"string"},
-										Format:  "",
+										Type:   []string{"string"},
+										Format: "",
 									},
 								},
 							},
@@ -4435,8 +4384,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_GatewayList(ref common.ReferenceCallba
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.Gateway"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.Gateway"),
 									},
 								},
 							},
@@ -4481,8 +4429,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_GatewaySpec(ref common.ReferenceCallba
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.Listener"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.Listener"),
 									},
 								},
 							},
@@ -4500,8 +4447,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_GatewaySpec(ref common.ReferenceCallba
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.GatewaySpecAddress"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.GatewaySpecAddress"),
 									},
 								},
 							},
@@ -4587,8 +4533,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_GatewayStatus(ref common.ReferenceCall
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.GatewayStatusAddress"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.GatewayStatusAddress"),
 									},
 								},
 							},
@@ -4609,8 +4554,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_GatewayStatus(ref common.ReferenceCall
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref(v1.Condition{}.OpenAPIModelName()),
+										Ref: ref(v1.Condition{}.OpenAPIModelName()),
 									},
 								},
 							},
@@ -4631,8 +4575,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_GatewayStatus(ref common.ReferenceCall
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.ListenerStatus"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.ListenerStatus"),
 									},
 								},
 							},
@@ -4735,9 +4678,8 @@ func schema_sigsk8sio_gateway_api_apis_v1_HTTPAuthConfig(ref common.ReferenceCal
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: "",
-										Type:    []string{"string"},
-										Format:  "",
+										Type:   []string{"string"},
+										Format: "",
 									},
 								},
 							},
@@ -4755,9 +4697,8 @@ func schema_sigsk8sio_gateway_api_apis_v1_HTTPAuthConfig(ref common.ReferenceCal
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: "",
-										Type:    []string{"string"},
-										Format:  "",
+										Type:   []string{"string"},
+										Format: "",
 									},
 								},
 							},
@@ -4831,8 +4772,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_HTTPBackendRef(ref common.ReferenceCal
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.HTTPRouteFilter"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.HTTPRouteFilter"),
 									},
 								},
 							},
@@ -4866,9 +4806,8 @@ func schema_sigsk8sio_gateway_api_apis_v1_HTTPCORSFilter(ref common.ReferenceCal
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: "",
-										Type:    []string{"string"},
-										Format:  "",
+										Type:   []string{"string"},
+										Format: "",
 									},
 								},
 							},
@@ -4893,9 +4832,8 @@ func schema_sigsk8sio_gateway_api_apis_v1_HTTPCORSFilter(ref common.ReferenceCal
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: "",
-										Type:    []string{"string"},
-										Format:  "",
+										Type:   []string{"string"},
+										Format: "",
 									},
 								},
 							},
@@ -4913,9 +4851,8 @@ func schema_sigsk8sio_gateway_api_apis_v1_HTTPCORSFilter(ref common.ReferenceCal
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: "",
-										Type:    []string{"string"},
-										Format:  "",
+										Type:   []string{"string"},
+										Format: "",
 									},
 								},
 							},
@@ -4933,9 +4870,8 @@ func schema_sigsk8sio_gateway_api_apis_v1_HTTPCORSFilter(ref common.ReferenceCal
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: "",
-										Type:    []string{"string"},
-										Format:  "",
+										Type:   []string{"string"},
+										Format: "",
 									},
 								},
 							},
@@ -5054,8 +4990,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_HTTPHeaderFilter(ref common.ReferenceC
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.HTTPHeader"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.HTTPHeader"),
 									},
 								},
 							},
@@ -5076,8 +5011,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_HTTPHeaderFilter(ref common.ReferenceC
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.HTTPHeader"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.HTTPHeader"),
 									},
 								},
 							},
@@ -5095,9 +5029,8 @@ func schema_sigsk8sio_gateway_api_apis_v1_HTTPHeaderFilter(ref common.ReferenceC
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: "",
-										Type:    []string{"string"},
-										Format:  "",
+										Type:   []string{"string"},
+										Format: "",
 									},
 								},
 							},
@@ -5488,8 +5421,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_HTTPRouteList(ref common.ReferenceCall
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.HTTPRoute"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.HTTPRoute"),
 									},
 								},
 							},
@@ -5532,8 +5464,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_HTTPRouteMatch(ref common.ReferenceCal
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.HTTPHeaderMatch"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.HTTPHeaderMatch"),
 									},
 								},
 							},
@@ -5554,8 +5485,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_HTTPRouteMatch(ref common.ReferenceCal
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.HTTPQueryParamMatch"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.HTTPQueryParamMatch"),
 									},
 								},
 							},
@@ -5580,7 +5510,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_HTTPRouteRetry(ref common.ReferenceCal
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "HTTPRouteRetry defines retry configuration for an HTTPRoute.\n\nImplementations SHOULD retry on connection errors (disconnect, reset, timeout, TCP failure) if a retry stanza is configured.",
+				Description: "HTTPRouteRetry defines retry configuration for an HTTPRoute.\n\nImplementations SHOULD retry when a retry stanza is configured and the connection could not be established (e.g., connect timeout, connection refused, TLS handshake failure), or the backend explicitly rejected the request before processing it (e.g., HTTP/2 REFUSED_STREAM, gRPC UNAVAILABLE)\n\nImplementations SHOULD NOT retry by default on failures where the request may have been processed (e.g., a connection reset after the request was sent). Implementations that do retry on such conditions MUST clearly document this behavior, as it is unsafe for non-idempotent requests.",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"codes": {
@@ -5595,9 +5525,8 @@ func schema_sigsk8sio_gateway_api_apis_v1_HTTPRouteRetry(ref common.ReferenceCal
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: 0,
-										Type:    []string{"integer"},
-										Format:  "int32",
+										Type:   []string{"integer"},
+										Format: "int32",
 									},
 								},
 							},
@@ -5605,14 +5534,14 @@ func schema_sigsk8sio_gateway_api_apis_v1_HTTPRouteRetry(ref common.ReferenceCal
 					},
 					"attempts": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Attempts specifies the maximum number of times an individual request from the gateway to a backend should be retried.\n\nIf the maximum number of retries has been attempted without a successful response from the backend, the Gateway MUST return an error.\n\nWhen this field is unspecified, the number of times to attempt to retry a backend request is implementation-specific.\n\nSupport: Extended",
+							Description: "Attempts specifies the maximum number of times an individual request from the Gateway to a backend should be retried in addition to the initial request.\n\nIf the maximum number of retries has been attempted without a successful response from the backend, the Gateway MUST return an error.\n\nSupport: Extended",
 							Type:        []string{"integer"},
 							Format:      "int32",
 						},
 					},
 					"backoff": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Backoff specifies the minimum duration a Gateway should wait between retry attempts and is represented in Gateway API Duration formatting.\n\nFor example, setting the `rules[].retry.backoff` field to the value `100ms` will cause a backend request to first be retried approximately 100 milliseconds after timing out or receiving a response code configured to be retriable.\n\nAn implementation MAY use an exponential or alternative backoff strategy for subsequent retry attempts, MAY cap the maximum backoff duration to some amount greater than the specified minimum, and MAY add arbitrary jitter to stagger requests, as long as unsuccessful backend requests are not retried before the configured minimum duration.\n\nIf a Request timeout (`rules[].timeouts.request`) is configured on the route, the entire duration of the initial request and any retry attempts MUST not exceed the Request timeout duration. If any retry attempts are still in progress when the Request timeout duration has been reached, these SHOULD be canceled if possible and the Gateway MUST immediately return a timeout error.\n\nIf a BackendRequest timeout (`rules[].timeouts.backendRequest`) is configured on the route, any retry attempts which reach the configured BackendRequest timeout duration without a response SHOULD be canceled if possible and the Gateway should wait for at least the specified backoff duration before attempting to retry the backend request again.\n\nIf a BackendRequest timeout is _not_ configured on the route, retry attempts MAY time out after an implementation default duration, or MAY remain pending until a configured Request timeout or implementation default duration for total request time is reached.\n\nWhen this field is unspecified, the time to wait between retry attempts is implementation-specific.\n\nSupport: Extended",
+							Description: "Backoff specifies the base interval for an exponential backoff strategy between retry attempts and is represented in Gateway API Duration formatting.\n\nThe maximum duration a Gateway should wait before a retry attempt is `backoff * (2^N - 1)`, where N is the number of the retry attempt, starting at 1. Implementations MAY add jitter, resulting in an actual delay anywhere between zero and this bound, and MAY cap the delay at an implementation-defined maximum, which SHOULD be no less than the base interval.\n\nFor example, setting the `rules[].retry.backoff` field to the value `100ms` will cause a backend request to first be retried up to approximately 100 milliseconds after a connection error  or receiving a response code configured to be retriable.\n\nIf a Request timeout (`rules[].timeouts.request`) is configured on the route, the entire duration of the initial request and any retry attempts MUST not exceed the Request timeout duration. If any retry attempts are still in progress when the Request timeout duration has been reached, these SHOULD be canceled if possible and the Gateway MUST immediately return a timeout error.\n\nIf a BackendRequest timeout (`rules[].timeouts.backendRequest`) is configured on the route, any retry attempts which reach the configured BackendRequest timeout duration without a response SHOULD be canceled if possible and the Gateway SHOULD schedule the next retry attempt according to the configured backoff.\n\nIf a BackendRequest timeout is _not_ configured on the route, retry attempts MAY time out after an implementation default duration, or MAY remain pending until a configured Request timeout or implementation default duration for total request time is reached.\n\nWhen this field is unspecified, the backoff strategy or base interval are implementation-specific.\n\nImplementations that do not support an exponential backoff strategy MUST set the Accepted Condition for the Route to `status: False` with a Reason of `UnsupportedValue` when this field is set.\n\nSupport: Implementation-specific",
 							Type:        []string{"string"},
 							Format:      "",
 						},
@@ -5649,8 +5578,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_HTTPRouteRule(ref common.ReferenceCall
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.HTTPRouteMatch"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.HTTPRouteMatch"),
 									},
 								},
 							},
@@ -5668,8 +5596,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_HTTPRouteRule(ref common.ReferenceCall
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.HTTPRouteFilter"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.HTTPRouteFilter"),
 									},
 								},
 							},
@@ -5687,8 +5614,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_HTTPRouteRule(ref common.ReferenceCall
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.HTTPBackendRef"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.HTTPBackendRef"),
 									},
 								},
 							},
@@ -5708,7 +5634,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_HTTPRouteRule(ref common.ReferenceCall
 					},
 					"sessionPersistence": {
 						SchemaProps: spec.SchemaProps{
-							Description: "SessionPersistence defines and configures session persistence for the route rule.\n\nSupport: Extended\n\n<gateway:experimental>",
+							Description: "Deprecated: use the Backend resource for session persistence (GEP-4894).\n\nSessionPersistence defines and configures session persistence for the route rule.\n\nSupport: Extended\n\n<gateway:experimental>",
 							Ref:         ref("sigs.k8s.io/gateway-api/apis/v1.SessionPersistence"),
 						},
 					},
@@ -5739,8 +5665,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_HTTPRouteSpec(ref common.ReferenceCall
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.ParentReference"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.ParentReference"),
 									},
 								},
 							},
@@ -5765,9 +5690,8 @@ func schema_sigsk8sio_gateway_api_apis_v1_HTTPRouteSpec(ref common.ReferenceCall
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: "",
-										Type:    []string{"string"},
-										Format:  "",
+										Type:   []string{"string"},
+										Format: "",
 									},
 								},
 							},
@@ -5785,8 +5709,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_HTTPRouteSpec(ref common.ReferenceCall
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.HTTPRouteRule"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.HTTPRouteRule"),
 									},
 								},
 							},
@@ -5819,8 +5742,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_HTTPRouteStatus(ref common.ReferenceCa
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.RouteParentStatus"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.RouteParentStatus"),
 									},
 								},
 							},
@@ -6052,8 +5974,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_ListenerEntryStatus(ref common.Referen
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.RouteGroupKind"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.RouteGroupKind"),
 									},
 								},
 							},
@@ -6082,8 +6003,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_ListenerEntryStatus(ref common.Referen
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref(v1.Condition{}.OpenAPIModelName()),
+										Ref: ref(v1.Condition{}.OpenAPIModelName()),
 									},
 								},
 							},
@@ -6208,8 +6128,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_ListenerSetList(ref common.ReferenceCa
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.ListenerSet"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.ListenerSet"),
 									},
 								},
 							},
@@ -6253,8 +6172,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_ListenerSetSpec(ref common.ReferenceCa
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.ListenerEntry"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.ListenerEntry"),
 									},
 								},
 							},
@@ -6290,8 +6208,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_ListenerSetStatus(ref common.Reference
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref(v1.Condition{}.OpenAPIModelName()),
+										Ref: ref(v1.Condition{}.OpenAPIModelName()),
 									},
 								},
 							},
@@ -6312,8 +6229,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_ListenerSetStatus(ref common.Reference
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.ListenerEntryStatus"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.ListenerEntryStatus"),
 									},
 								},
 							},
@@ -6354,8 +6270,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_ListenerStatus(ref common.ReferenceCal
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.RouteGroupKind"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.RouteGroupKind"),
 									},
 								},
 							},
@@ -6384,8 +6299,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_ListenerStatus(ref common.ReferenceCal
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref(v1.Condition{}.OpenAPIModelName()),
+										Ref: ref(v1.Condition{}.OpenAPIModelName()),
 									},
 								},
 							},
@@ -6426,8 +6340,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_ListenerTLSConfig(ref common.Reference
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.SecretObjectReference"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.SecretObjectReference"),
 									},
 								},
 							},
@@ -6441,9 +6354,8 @@ func schema_sigsk8sio_gateway_api_apis_v1_ListenerTLSConfig(ref common.Reference
 								Allows: true,
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: "",
-										Type:    []string{"string"},
-										Format:  "",
+										Type:   []string{"string"},
+										Format: "",
 									},
 								},
 							},
@@ -6888,8 +6800,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_PolicyAncestorStatus(ref common.Refere
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref(v1.Condition{}.OpenAPIModelName()),
+										Ref: ref(v1.Condition{}.OpenAPIModelName()),
 									},
 								},
 							},
@@ -6923,8 +6834,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_PolicyStatus(ref common.ReferenceCallb
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.PolicyAncestorStatus"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.PolicyAncestorStatus"),
 									},
 								},
 							},
@@ -7053,8 +6963,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_ReferenceGrantList(ref common.Referenc
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.ReferenceGrant"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.ReferenceGrant"),
 									},
 								},
 							},
@@ -7088,8 +6997,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_ReferenceGrantSpec(ref common.Referenc
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.ReferenceGrantFrom"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.ReferenceGrantFrom"),
 									},
 								},
 							},
@@ -7107,8 +7015,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_ReferenceGrantSpec(ref common.Referenc
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.ReferenceGrantTo"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.ReferenceGrantTo"),
 									},
 								},
 							},
@@ -7254,8 +7161,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_RouteParentStatus(ref common.Reference
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref(v1.Condition{}.OpenAPIModelName()),
+										Ref: ref(v1.Condition{}.OpenAPIModelName()),
 									},
 								},
 							},
@@ -7289,8 +7195,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_RouteStatus(ref common.ReferenceCallba
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.RouteParentStatus"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.RouteParentStatus"),
 									},
 								},
 							},
@@ -7528,8 +7433,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_TCPRouteList(ref common.ReferenceCallb
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.TCPRoute"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.TCPRoute"),
 									},
 								},
 							},
@@ -7570,8 +7474,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_TCPRouteRule(ref common.ReferenceCallb
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.BackendRef"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.BackendRef"),
 									},
 								},
 							},
@@ -7605,8 +7508,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_TCPRouteSpec(ref common.ReferenceCallb
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.ParentReference"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.ParentReference"),
 									},
 								},
 							},
@@ -7631,8 +7533,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_TCPRouteSpec(ref common.ReferenceCallb
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.TCPRouteRule"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.TCPRouteRule"),
 									},
 								},
 							},
@@ -7666,8 +7567,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_TCPRouteStatus(ref common.ReferenceCal
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.RouteParentStatus"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.RouteParentStatus"),
 									},
 								},
 							},
@@ -7816,8 +7716,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_TLSRouteList(ref common.ReferenceCallb
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.TLSRoute"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.TLSRoute"),
 									},
 								},
 							},
@@ -7858,8 +7757,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_TLSRouteRule(ref common.ReferenceCallb
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.BackendRef"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.BackendRef"),
 									},
 								},
 							},
@@ -7893,8 +7791,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_TLSRouteSpec(ref common.ReferenceCallb
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.ParentReference"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.ParentReference"),
 									},
 								},
 							},
@@ -7919,9 +7816,8 @@ func schema_sigsk8sio_gateway_api_apis_v1_TLSRouteSpec(ref common.ReferenceCallb
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: "",
-										Type:    []string{"string"},
-										Format:  "",
+										Type:   []string{"string"},
+										Format: "",
 									},
 								},
 							},
@@ -7939,8 +7835,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_TLSRouteSpec(ref common.ReferenceCallb
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.TLSRouteRule"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.TLSRouteRule"),
 									},
 								},
 							},
@@ -7974,8 +7869,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_TLSRouteStatus(ref common.ReferenceCal
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.RouteParentStatus"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.RouteParentStatus"),
 									},
 								},
 							},
@@ -8073,8 +7967,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_UDPRouteList(ref common.ReferenceCallb
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.UDPRoute"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.UDPRoute"),
 									},
 								},
 							},
@@ -8115,8 +8008,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_UDPRouteRule(ref common.ReferenceCallb
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.BackendRef"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.BackendRef"),
 									},
 								},
 							},
@@ -8150,8 +8042,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_UDPRouteSpec(ref common.ReferenceCallb
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.ParentReference"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.ParentReference"),
 									},
 								},
 							},
@@ -8176,8 +8067,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_UDPRouteSpec(ref common.ReferenceCallb
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.UDPRouteRule"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.UDPRouteRule"),
 									},
 								},
 							},
@@ -8211,8 +8101,7 @@ func schema_sigsk8sio_gateway_api_apis_v1_UDPRouteStatus(ref common.ReferenceCal
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.RouteParentStatus"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.RouteParentStatus"),
 									},
 								},
 							},
@@ -8329,8 +8218,7 @@ func schema_sigsk8sio_gateway_api_apis_v1alpha2_GRPCRouteList(ref common.Referen
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1alpha2.GRPCRoute"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1alpha2.GRPCRoute"),
 									},
 								},
 							},
@@ -8506,8 +8394,7 @@ func schema_sigsk8sio_gateway_api_apis_v1alpha2_PolicyAncestorStatus(ref common.
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref(v1.Condition{}.OpenAPIModelName()),
+										Ref: ref(v1.Condition{}.OpenAPIModelName()),
 									},
 								},
 							},
@@ -8540,8 +8427,7 @@ func schema_sigsk8sio_gateway_api_apis_v1alpha2_PolicyStatus(ref common.Referenc
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.PolicyAncestorStatus"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.PolicyAncestorStatus"),
 									},
 								},
 							},
@@ -8632,8 +8518,7 @@ func schema_sigsk8sio_gateway_api_apis_v1alpha2_ReferenceGrantList(ref common.Re
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1alpha2.ReferenceGrant"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1alpha2.ReferenceGrant"),
 									},
 								},
 							},
@@ -8731,8 +8616,7 @@ func schema_sigsk8sio_gateway_api_apis_v1alpha2_TCPRouteList(ref common.Referenc
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1alpha2.TCPRoute"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1alpha2.TCPRoute"),
 									},
 								},
 							},
@@ -8773,8 +8657,7 @@ func schema_sigsk8sio_gateway_api_apis_v1alpha2_TCPRouteRule(ref common.Referenc
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.BackendRef"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.BackendRef"),
 									},
 								},
 							},
@@ -8808,8 +8691,7 @@ func schema_sigsk8sio_gateway_api_apis_v1alpha2_TCPRouteSpec(ref common.Referenc
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.ParentReference"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.ParentReference"),
 									},
 								},
 							},
@@ -8834,8 +8716,7 @@ func schema_sigsk8sio_gateway_api_apis_v1alpha2_TCPRouteSpec(ref common.Referenc
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1alpha2.TCPRouteRule"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1alpha2.TCPRouteRule"),
 									},
 								},
 							},
@@ -8869,8 +8750,7 @@ func schema_sigsk8sio_gateway_api_apis_v1alpha2_TCPRouteStatus(ref common.Refere
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.RouteParentStatus"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.RouteParentStatus"),
 									},
 								},
 							},
@@ -8968,8 +8848,7 @@ func schema_sigsk8sio_gateway_api_apis_v1alpha2_TLSRouteList(ref common.Referenc
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1alpha2.TLSRoute"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1alpha2.TLSRoute"),
 									},
 								},
 							},
@@ -9010,8 +8889,7 @@ func schema_sigsk8sio_gateway_api_apis_v1alpha2_TLSRouteRule(ref common.Referenc
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.BackendRef"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.BackendRef"),
 									},
 								},
 							},
@@ -9045,8 +8923,7 @@ func schema_sigsk8sio_gateway_api_apis_v1alpha2_TLSRouteSpec(ref common.Referenc
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.ParentReference"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.ParentReference"),
 									},
 								},
 							},
@@ -9071,9 +8948,8 @@ func schema_sigsk8sio_gateway_api_apis_v1alpha2_TLSRouteSpec(ref common.Referenc
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: "",
-										Type:    []string{"string"},
-										Format:  "",
+										Type:   []string{"string"},
+										Format: "",
 									},
 								},
 							},
@@ -9091,8 +8967,7 @@ func schema_sigsk8sio_gateway_api_apis_v1alpha2_TLSRouteSpec(ref common.Referenc
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1alpha2.TLSRouteRule"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1alpha2.TLSRouteRule"),
 									},
 								},
 							},
@@ -9126,8 +9001,7 @@ func schema_sigsk8sio_gateway_api_apis_v1alpha2_TLSRouteStatus(ref common.Refere
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.RouteParentStatus"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.RouteParentStatus"),
 									},
 								},
 							},
@@ -9225,8 +9099,7 @@ func schema_sigsk8sio_gateway_api_apis_v1alpha2_UDPRouteList(ref common.Referenc
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1alpha2.UDPRoute"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1alpha2.UDPRoute"),
 									},
 								},
 							},
@@ -9267,8 +9140,7 @@ func schema_sigsk8sio_gateway_api_apis_v1alpha2_UDPRouteRule(ref common.Referenc
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.BackendRef"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.BackendRef"),
 									},
 								},
 							},
@@ -9302,8 +9174,7 @@ func schema_sigsk8sio_gateway_api_apis_v1alpha2_UDPRouteSpec(ref common.Referenc
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.ParentReference"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.ParentReference"),
 									},
 								},
 							},
@@ -9328,8 +9199,7 @@ func schema_sigsk8sio_gateway_api_apis_v1alpha2_UDPRouteSpec(ref common.Referenc
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1alpha2.UDPRouteRule"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1alpha2.UDPRouteRule"),
 									},
 								},
 							},
@@ -9363,8 +9233,7 @@ func schema_sigsk8sio_gateway_api_apis_v1alpha2_UDPRouteStatus(ref common.Refere
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.RouteParentStatus"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.RouteParentStatus"),
 									},
 								},
 							},
@@ -9460,8 +9329,7 @@ func schema_sigsk8sio_gateway_api_apis_v1alpha3_BackendTLSPolicyList(ref common.
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1alpha3.BackendTLSPolicy"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1alpha3.BackendTLSPolicy"),
 									},
 								},
 							},
@@ -9559,8 +9427,7 @@ func schema_sigsk8sio_gateway_api_apis_v1alpha3_TLSRouteList(ref common.Referenc
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1alpha3.TLSRoute"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1alpha3.TLSRoute"),
 									},
 								},
 							},
@@ -9594,8 +9461,7 @@ func schema_sigsk8sio_gateway_api_apis_v1alpha3_TLSRouteSpec(ref common.Referenc
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.ParentReference"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.ParentReference"),
 									},
 								},
 							},
@@ -9620,9 +9486,8 @@ func schema_sigsk8sio_gateway_api_apis_v1alpha3_TLSRouteSpec(ref common.Referenc
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: "",
-										Type:    []string{"string"},
-										Format:  "",
+										Type:   []string{"string"},
+										Format: "",
 									},
 								},
 							},
@@ -9640,8 +9505,7 @@ func schema_sigsk8sio_gateway_api_apis_v1alpha3_TLSRouteSpec(ref common.Referenc
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.TLSRouteRule"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.TLSRouteRule"),
 									},
 								},
 							},
@@ -9789,8 +9653,7 @@ func schema_sigsk8sio_gateway_api_apis_v1beta1_GatewayClassList(ref common.Refer
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1beta1.GatewayClass"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1beta1.GatewayClass"),
 									},
 								},
 							},
@@ -9838,8 +9701,7 @@ func schema_sigsk8sio_gateway_api_apis_v1beta1_GatewayList(ref common.ReferenceC
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1beta1.Gateway"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1beta1.Gateway"),
 									},
 								},
 							},
@@ -9937,8 +9799,7 @@ func schema_sigsk8sio_gateway_api_apis_v1beta1_HTTPRouteList(ref common.Referenc
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1beta1.HTTPRoute"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1beta1.HTTPRoute"),
 									},
 								},
 							},
@@ -10029,8 +9890,7 @@ func schema_sigsk8sio_gateway_api_apis_v1beta1_ReferenceGrantList(ref common.Ref
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1beta1.ReferenceGrant"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1beta1.ReferenceGrant"),
 									},
 								},
 							},
@@ -10049,7 +9909,7 @@ func schema_sigsk8sio_gateway_api_apisx_v1alpha1_BackendAncestorStatus(ref commo
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "BackendAncestorStatus describes the status of a Backend with respect to a specific parent resource (typically a Gateway).",
+				Description: "BackendAncestorStatus describes the status of a Backend with respect to a specific ancestor resource (typically a Gateway).",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"controllerName": {
@@ -10062,7 +9922,7 @@ func schema_sigsk8sio_gateway_api_apisx_v1alpha1_BackendAncestorStatus(ref commo
 					},
 					"ancestorRef": {
 						SchemaProps: spec.SchemaProps{
-							Description: "AncestorRef identifies the parent resource that this status is associated with.",
+							Description: "AncestorRef identifies the ancestor resource that this status is associated with.",
 							Default:     map[string]interface{}{},
 							Ref:         ref("sigs.k8s.io/gateway-api/apis/v1.ParentReference"),
 						},
@@ -10077,13 +9937,12 @@ func schema_sigsk8sio_gateway_api_apisx_v1alpha1_BackendAncestorStatus(ref commo
 							},
 						},
 						SchemaProps: spec.SchemaProps{
-							Description: "For Kubernetes API conventions, see: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#typical-status-properties conditions represent the current state of the Backend resource. Each condition has a unique type and reflects the status of a specific aspect of the resource.\n\nDefined condition types include: - \"Accepted\": the resource has been acknowledged and accepteed by the controller\n\nThe status of each condition is one of True, False, or Unknown.",
+							Description: "For Kubernetes API conventions, see: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#typical-status-properties conditions represent the current state of the Backend resource. Each condition has a unique type and reflects the status of a specific aspect of the resource.\n\nDefined condition types include: - \"Accepted\": the resource has been acknowledged and accepted by the controller\n\nThe status of each condition is one of True, False, or Unknown.",
 							Type:        []string{"array"},
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref(v1.Condition{}.OpenAPIModelName()),
+										Ref: ref(v1.Condition{}.OpenAPIModelName()),
 									},
 								},
 							},
@@ -10102,25 +9961,17 @@ func schema_sigsk8sio_gateway_api_apisx_v1alpha1_BackendPort(ref common.Referenc
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "BackendPort describes the port the implementation should use when connecting to a Backend. Inspired by discoveryv1.EndpointPort.",
+				Description: "BackendPort describes the port the implementation should use when connecting to a Backend.",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
-					"name": {
+					"number": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Name represents the name of this port. All ports in a Backend must have a unique name. Name must either be an empty string or pass DNS_LABEL validation (lowercase alphanumeric or '-', starting and ending with an alphanumeric character, at most 63 characters).",
-							Type:        []string{"string"},
-							Format:      "",
-						},
-					},
-					"port": {
-						SchemaProps: spec.SchemaProps{
-							Description: "Port represents the port number of the endpoint.",
+							Description: "Number represents the port number of the destination.",
 							Type:        []string{"integer"},
 							Format:      "int32",
 						},
 					},
 				},
-				Required: []string{"port"},
 			},
 		},
 	}
@@ -10143,7 +9994,7 @@ func schema_sigsk8sio_gateway_api_apisx_v1alpha1_BackendSpec(ref common.Referenc
 					},
 					"port": {
 						SchemaProps: spec.SchemaProps{
-							Description: "Port defines the port that the implementation should use when connecting to this backend.",
+							Description: "Port defines the port to connect to on this backend. For ExternalHostname, this is the port on the external host. For EndpointSelector, this specifies which endpoint port to connect to.",
 							Default:     map[string]interface{}{},
 							Ref:         ref("sigs.k8s.io/gateway-api/apisx/v1alpha1.BackendPort"),
 						},
@@ -10152,6 +10003,12 @@ func schema_sigsk8sio_gateway_api_apisx_v1alpha1_BackendSpec(ref common.Referenc
 						SchemaProps: spec.SchemaProps{
 							Description: "ExternalHostname specifies the configuration for an ExternalHostname backend. This field must be set when type is ExternalHostname and must be unset otherwise.\n\nSupport: Extended",
 							Ref:         ref("sigs.k8s.io/gateway-api/apisx/v1alpha1.ExternalHostnameBackend"),
+						},
+					},
+					"endpointSelector": {
+						SchemaProps: spec.SchemaProps{
+							Description: "EndpointSelector specifies the configuration for an EndpointSelector backend. This field must be set when type is EndpointSelector and must be unset otherwise.",
+							Ref:         ref("sigs.k8s.io/gateway-api/apisx/v1alpha1.EndpointSelectorBackend"),
 						},
 					},
 					"protocol": {
@@ -10172,7 +10029,7 @@ func schema_sigsk8sio_gateway_api_apisx_v1alpha1_BackendSpec(ref common.Referenc
 			},
 		},
 		Dependencies: []string{
-			"sigs.k8s.io/gateway-api/apisx/v1alpha1.BackendPort", "sigs.k8s.io/gateway-api/apisx/v1alpha1.BackendTLS", "sigs.k8s.io/gateway-api/apisx/v1alpha1.ExternalHostnameBackend"},
+			"sigs.k8s.io/gateway-api/apisx/v1alpha1.BackendPort", "sigs.k8s.io/gateway-api/apisx/v1alpha1.BackendTLS", "sigs.k8s.io/gateway-api/apisx/v1alpha1.EndpointSelectorBackend", "sigs.k8s.io/gateway-api/apisx/v1alpha1.ExternalHostnameBackend"},
 	}
 }
 
@@ -10183,20 +10040,19 @@ func schema_sigsk8sio_gateway_api_apisx_v1alpha1_BackendStatus(ref common.Refere
 				Description: "BackendStatus defines the observed state of a Backend.",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
-					"parents": {
+					"ancestors": {
 						VendorExtensible: spec.VendorExtensible{
 							Extensions: spec.Extensions{
 								"x-kubernetes-list-type": "atomic",
 							},
 						},
 						SchemaProps: spec.SchemaProps{
-							Description: "Ancestors is a list of parent resources associated with this Backend, and the status of the Backend with respect to each parent.\n\nA maximum of 32 parents will be represented in this list. An empty list indicates that the Backend is not associated with any parents.\n\n<gateway:util:excludeFromCRD> Notes for implementers:\n\nA controller that manages the Backend must add an entry for each parent it manages and remove the entry when the controller no longer considers the Backend to be associated with that parent.\n\nfor little benefit. It may also be unnecessarily complex for implementations to manage. If so, we'll remove the ancestor-based grouping and make it controller only. </gateway:util:excludeFromCRD>",
+							Description: "Ancestors is a list of ancestor resources (usually Gateways) that are associated with this Backend, and the status of the Backend with respect to each ancestor.\n\nA maximum of 32 ancestors will be represented in this list. An empty list indicates that the Backend is not associated with any ancestors.\n\n<gateway:util:excludeFromCRD> Notes for implementers:\n\nA controller that manages the Backend must add an entry for each ancestor it manages and remove the entry when the controller no longer considers the Backend to be associated with that ancestor.\n\nfor little benefit. It may also be unnecessarily complex for implementations to manage. If so, we'll remove the ancestor-based grouping and make it controller only. </gateway:util:excludeFromCRD>",
 							Type:        []string{"array"},
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apisx/v1alpha1.BackendAncestorStatus"),
+										Ref: ref("sigs.k8s.io/gateway-api/apisx/v1alpha1.BackendAncestorStatus"),
 									},
 								},
 							},
@@ -10234,7 +10090,6 @@ func schema_sigsk8sio_gateway_api_apisx_v1alpha1_BackendTLS(ref common.Reference
 					"validation": {
 						SchemaProps: spec.SchemaProps{
 							Description: "Validation contains TLS validation configuration for the backend connection.",
-							Default:     map[string]interface{}{},
 							Ref:         ref("sigs.k8s.io/gateway-api/apis/v1.BackendTLSPolicyValidation"),
 						},
 					},
@@ -10271,8 +10126,7 @@ func schema_sigsk8sio_gateway_api_apisx_v1alpha1_BackendTrafficPolicySpec(ref co
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apis/v1.LocalPolicyTargetReference"),
+										Ref: ref("sigs.k8s.io/gateway-api/apis/v1.LocalPolicyTargetReference"),
 									},
 								},
 							},
@@ -10286,7 +10140,7 @@ func schema_sigsk8sio_gateway_api_apisx_v1alpha1_BackendTrafficPolicySpec(ref co
 					},
 					"sessionPersistence": {
 						SchemaProps: spec.SchemaProps{
-							Description: "SessionPersistence defines and configures session persistence for the backend.\n\nSupport: Extended",
+							Description: "Deprecated: use the Backend resource for session persistence (GEP-4894).\n\nSessionPersistence defines and configures session persistence for the backend.\n\nSupport: Extended",
 							Ref:         ref("sigs.k8s.io/gateway-api/apis/v1.SessionPersistence"),
 						},
 					},
@@ -10326,6 +10180,35 @@ func schema_sigsk8sio_gateway_api_apisx_v1alpha1_BudgetDetails(ref common.Refere
 	}
 }
 
+func schema_sigsk8sio_gateway_api_apisx_v1alpha1_EndpointSelectorBackend(ref common.ReferenceCallback) common.OpenAPIDefinition {
+	return common.OpenAPIDefinition{
+		Schema: spec.Schema{
+			SchemaProps: spec.SchemaProps{
+				Description: "EndpointSelectorBackend specifies the configuration for a backend that selects a set of pods by label.",
+				Type:        []string{"object"},
+				Properties: map[string]spec.Schema{
+					"matchLabels": {
+						SchemaProps: spec.SchemaProps{
+							Description: "MatchLabels contains a set of required {key,value} pairs. An object must match every label in this map to be selected. The matching logic is an AND operation on all entries.",
+							Type:        []string{"object"},
+							AdditionalProperties: &spec.SchemaOrBool{
+								Allows: true,
+								Schema: &spec.Schema{
+									SchemaProps: spec.SchemaProps{
+										Type:   []string{"string"},
+										Format: "",
+									},
+								},
+							},
+						},
+					},
+				},
+				Required: []string{"matchLabels"},
+			},
+		},
+	}
+}
+
 func schema_sigsk8sio_gateway_api_apisx_v1alpha1_ExternalHostnameBackend(ref common.ReferenceCallback) common.OpenAPIDefinition {
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
@@ -10342,6 +10225,35 @@ func schema_sigsk8sio_gateway_api_apisx_v1alpha1_ExternalHostnameBackend(ref com
 					},
 				},
 				Required: []string{"hostname"},
+			},
+		},
+	}
+}
+
+func schema_sigsk8sio_gateway_api_apisx_v1alpha1_LabelSelector(ref common.ReferenceCallback) common.OpenAPIDefinition {
+	return common.OpenAPIDefinition{
+		Schema: spec.Schema{
+			SchemaProps: spec.SchemaProps{
+				Description: "LabelSelector defines a query for resources based on their labels.",
+				Type:        []string{"object"},
+				Properties: map[string]spec.Schema{
+					"matchLabels": {
+						SchemaProps: spec.SchemaProps{
+							Description: "MatchLabels contains a set of required {key,value} pairs. An object must match every label in this map to be selected. The matching logic is an AND operation on all entries.",
+							Type:        []string{"object"},
+							AdditionalProperties: &spec.SchemaOrBool{
+								Allows: true,
+								Schema: &spec.Schema{
+									SchemaProps: spec.SchemaProps{
+										Type:   []string{"string"},
+										Format: "",
+									},
+								},
+							},
+						},
+					},
+				},
+				Required: []string{"matchLabels"},
 			},
 		},
 	}
@@ -10405,8 +10317,7 @@ func schema_sigsk8sio_gateway_api_apisx_v1alpha1_MeshStatus(ref common.Reference
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref(v1.Condition{}.OpenAPIModelName()),
+										Ref: ref(v1.Condition{}.OpenAPIModelName()),
 									},
 								},
 							},
@@ -10578,8 +10489,7 @@ func schema_sigsk8sio_gateway_api_apisx_v1alpha1_XBackendList(ref common.Referen
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apisx/v1alpha1.XBackend"),
+										Ref: ref("sigs.k8s.io/gateway-api/apisx/v1alpha1.XBackend"),
 									},
 								},
 							},
@@ -10677,8 +10587,7 @@ func schema_sigsk8sio_gateway_api_apisx_v1alpha1_XBackendTrafficPolicyList(ref c
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apisx/v1alpha1.XBackendTrafficPolicy"),
+										Ref: ref("sigs.k8s.io/gateway-api/apisx/v1alpha1.XBackendTrafficPolicy"),
 									},
 								},
 							},
@@ -10775,8 +10684,7 @@ func schema_sigsk8sio_gateway_api_apisx_v1alpha1_XMeshList(ref common.ReferenceC
 							Items: &spec.SchemaOrArray{
 								Schema: &spec.Schema{
 									SchemaProps: spec.SchemaProps{
-										Default: map[string]interface{}{},
-										Ref:     ref("sigs.k8s.io/gateway-api/apisx/v1alpha1.XMesh"),
+										Ref: ref("sigs.k8s.io/gateway-api/apisx/v1alpha1.XMesh"),
 									},
 								},
 							},

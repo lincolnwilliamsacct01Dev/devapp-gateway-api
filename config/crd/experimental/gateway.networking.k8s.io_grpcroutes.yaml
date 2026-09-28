@@ -117,8 +117,9 @@ spec:
                   If a Route (A) of type HTTPRoute or GRPCRoute is attached to a
                   Listener and that listener already has another Route (B) of the other
                   type attached and the intersection of the hostnames of A and B is
-                  non-empty, then the implementation MUST accept exactly one of these two
-                  routes, determined by the following criteria, in order:
+                  non-empty, then the implementation MAY reject one of the two routes.
+                  An implementation that does so MUST accept exactly one of them,
+                  determined by the following criteria, in order:
 
                   * The oldest Route based on creation timestamp.
                   * The Route appearing first in alphabetical order by
@@ -752,6 +753,10 @@ spec:
                                       - message: Must have port for Service reference
                                         rule: '(size(self.group) == 0 && self.kind
                                           == ''Service'') ? has(self.port) : true'
+                                      - message: Must not have port for Backend reference
+                                        rule: '(self.group == ''gateway.networking.x-k8s.io''
+                                          && self.kind == ''XBackend'') ? !has(self.port)
+                                          : true'
                                     fraction:
                                       description: |-
                                         Fraction represents the fraction of requests that should be
@@ -1100,6 +1105,9 @@ spec:
                         - message: Must have port for Service reference
                           rule: '(size(self.group) == 0 && self.kind == ''Service'')
                             ? has(self.port) : true'
+                        - message: Must not have port for Backend reference
+                          rule: '(self.group == ''gateway.networking.x-k8s.io'' &&
+                            self.kind == ''XBackend'') ? !has(self.port) : true'
                       maxItems: 16
                       type: array
                       x-kubernetes-list-type: atomic
@@ -1423,6 +1431,10 @@ spec:
                                 - message: Must have port for Service reference
                                   rule: '(size(self.group) == 0 && self.kind == ''Service'')
                                     ? has(self.port) : true'
+                                - message: Must not have port for Backend reference
+                                  rule: '(self.group == ''gateway.networking.x-k8s.io''
+                                    && self.kind == ''XBackend'') ? !has(self.port)
+                                    : true'
                               fraction:
                                 description: |-
                                   Fraction represents the fraction of requests that should be
@@ -1863,6 +1875,8 @@ spec:
                       type: string
                     sessionPersistence:
                       description: |-
+                        Deprecated: use the Backend resource for session persistence (GEP-4894).
+
                         SessionPersistence defines and configures session persistence
                         for the route rule.
 

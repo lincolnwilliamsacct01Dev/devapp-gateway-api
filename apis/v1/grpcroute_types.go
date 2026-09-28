@@ -126,8 +126,9 @@ type GRPCRouteSpec struct {
 	// If a Route (A) of type HTTPRoute or GRPCRoute is attached to a
 	// Listener and that listener already has another Route (B) of the other
 	// type attached and the intersection of the hostnames of A and B is
-	// non-empty, then the implementation MUST accept exactly one of these two
-	// routes, determined by the following criteria, in order:
+	// non-empty, then the implementation MAY reject one of the two routes.
+	// An implementation that does so MUST accept exactly one of them,
+	// determined by the following criteria, in order:
 	//
 	// * The oldest Route based on creation timestamp.
 	// * The Route appearing first in alphabetical order by
@@ -284,6 +285,8 @@ type GRPCRouteRule struct {
 	// +kubebuilder:validation:MaxItems=16
 	BackendRefs []GRPCBackendRef `json:"backendRefs,omitempty"`
 
+	// Deprecated: use the Backend resource for session persistence (GEP-4894).
+	//
 	// SessionPersistence defines and configures session persistence
 	// for the route rule.
 	//

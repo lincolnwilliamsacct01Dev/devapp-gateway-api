@@ -28,7 +28,7 @@ import (
 // with apply.
 //
 // BackendAncestorStatus describes the status of a Backend with respect to a
-// specific parent resource (typically a Gateway).
+// specific ancestor resource (typically a Gateway).
 type BackendAncestorStatusApplyConfiguration struct {
 	// ControllerName is a domain/path string that indicates the name of the
 	// controller that manages the Backend.
@@ -47,7 +47,8 @@ type BackendAncestorStatusApplyConfiguration struct {
 	// they are no longer necessary.
 	// </gateway:util:excludeFromCRD>
 	ControllerName *v1.GatewayController `json:"controllerName,omitempty"`
-	// AncestorRef identifies the parent resource that this status is associated with.
+	// AncestorRef identifies the ancestor resource that this status is
+	// associated with.
 	AncestorRef *apisv1.ParentReferenceApplyConfiguration `json:"ancestorRef,omitempty"`
 	// For Kubernetes API conventions, see:
 	// https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#typical-status-properties
@@ -55,7 +56,7 @@ type BackendAncestorStatusApplyConfiguration struct {
 	// Each condition has a unique type and reflects the status of a specific aspect of the resource.
 	//
 	// Defined condition types include:
-	// - "Accepted": the resource has been acknowledged and accepteed by the controller
+	// - "Accepted": the resource has been acknowledged and accepted by the controller
 	//
 	// The status of each condition is one of True, False, or Unknown.
 	Conditions []metav1.ConditionApplyConfiguration `json:"conditions,omitempty"`

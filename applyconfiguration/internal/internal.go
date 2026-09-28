@@ -2219,15 +2219,15 @@ var schemaYAML = typed.YAMLObject(`types:
 - name: io.k8s.sigs.gateway-api.apisx.v1alpha1.BackendPort
   map:
     fields:
-    - name: name
-      type:
-        scalar: string
-    - name: port
+    - name: number
       type:
         scalar: numeric
 - name: io.k8s.sigs.gateway-api.apisx.v1alpha1.BackendSpec
   map:
     fields:
+    - name: endpointSelector
+      type:
+        namedType: io.k8s.sigs.gateway-api.apisx.v1alpha1.EndpointSelectorBackend
     - name: externalHostname
       type:
         namedType: io.k8s.sigs.gateway-api.apisx.v1alpha1.ExternalHostnameBackend
@@ -2248,7 +2248,7 @@ var schemaYAML = typed.YAMLObject(`types:
 - name: io.k8s.sigs.gateway-api.apisx.v1alpha1.BackendStatus
   map:
     fields:
-    - name: parents
+    - name: ancestors
       type:
         list:
           elementType:
@@ -2267,7 +2267,6 @@ var schemaYAML = typed.YAMLObject(`types:
     - name: validation
       type:
         namedType: io.k8s.sigs.gateway-api.apis.v1.BackendTLSPolicyValidation
-      default: {}
 - name: io.k8s.sigs.gateway-api.apisx.v1alpha1.BackendTrafficPolicySpec
   map:
     fields:
@@ -2296,6 +2295,14 @@ var schemaYAML = typed.YAMLObject(`types:
     - name: percent
       type:
         scalar: numeric
+- name: io.k8s.sigs.gateway-api.apisx.v1alpha1.EndpointSelectorBackend
+  map:
+    fields:
+    - name: matchLabels
+      type:
+        map:
+          elementType:
+            scalar: string
 - name: io.k8s.sigs.gateway-api.apisx.v1alpha1.ExternalHostnameBackend
   map:
     fields:
