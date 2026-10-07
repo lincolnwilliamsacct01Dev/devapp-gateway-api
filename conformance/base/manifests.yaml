@@ -167,7 +167,7 @@ spec:
       containers:
         - name: infra-backend-v1
           # Originally from https://github.com/kubernetes-sigs/ingress-controller-conformance/tree/master/images/echoserver
-          image: registry.k8s.io/gateway-api/conformance/echo-basic:v0.1.0
+          image: registry.k8s.io/gateway-api/conformance/echo-basic:v0.2.0
           env:
             - name: POD_NAME
               valueFrom:
@@ -215,7 +215,7 @@ spec:
         runAsNonRoot: true
       containers:
         - name: infra-backend-v2
-          image: registry.k8s.io/gateway-api/conformance/echo-basic:v0.1.0
+          image: registry.k8s.io/gateway-api/conformance/echo-basic:v0.2.0
           env:
             - name: POD_NAME
               valueFrom:
@@ -265,7 +265,7 @@ spec:
         runAsNonRoot: true
       containers:
         - name: infra-backend-v3
-          image: registry.k8s.io/gateway-api/conformance/echo-basic:v0.1.0
+          image: registry.k8s.io/gateway-api/conformance/echo-basic:v0.2.0
           env:
             - name: POD_NAME
               valueFrom:
@@ -311,7 +311,7 @@ spec:
     spec:
       containers:
         - name: tls-backend
-          image: registry.k8s.io/gateway-api/conformance/echo-basic:v0.1.0
+          image: registry.k8s.io/gateway-api/conformance/echo-basic:v0.2.0
           volumeMounts:
             - name: secret-volume
               mountPath: /etc/secret-volume
@@ -375,7 +375,7 @@ spec:
         runAsNonRoot: true
       containers:
         - name: tls-backend-2
-          image: registry.k8s.io/gateway-api/conformance/echo-basic:v0.1.0
+          image: registry.k8s.io/gateway-api/conformance/echo-basic:v0.2.0
           volumeMounts:
             - name: secret-volume
               mountPath: /etc/secret-volume
@@ -446,7 +446,7 @@ spec:
         runAsNonRoot: true
       containers:
         - name: tls-backend
-          image: registry.k8s.io/gateway-api/conformance/echo-basic:v0.1.0
+          image: registry.k8s.io/gateway-api/conformance/echo-basic:v0.2.0
           volumeMounts:
             - name: secret-volume
               mountPath: /etc/secret-volume
@@ -510,7 +510,7 @@ spec:
         runAsNonRoot: true
       containers:
         - name: app-backend-v1
-          image: registry.k8s.io/gateway-api/conformance/echo-basic:v0.1.0
+          image: registry.k8s.io/gateway-api/conformance/echo-basic:v0.2.0
           env:
             - name: POD_NAME
               valueFrom:
@@ -558,7 +558,7 @@ spec:
         runAsNonRoot: true
       containers:
         - name: app-backend-v2
-          image: registry.k8s.io/gateway-api/conformance/echo-basic:v0.1.0
+          image: registry.k8s.io/gateway-api/conformance/echo-basic:v0.2.0
           env:
             - name: POD_NAME
               valueFrom:
@@ -613,7 +613,7 @@ spec:
         runAsNonRoot: true
       containers:
         - name: web-backend
-          image: registry.k8s.io/gateway-api/conformance/echo-basic:v0.1.0
+          image: registry.k8s.io/gateway-api/conformance/echo-basic:v0.2.0
           env:
             - name: POD_NAME
               valueFrom:
@@ -662,7 +662,7 @@ spec:
         runAsNonRoot: true
       containers:
         - name: grpc-infra-backend-v1
-          image: registry.k8s.io/gateway-api/conformance/echo-basic:v0.1.0
+          image: registry.k8s.io/gateway-api/conformance/echo-basic:v0.2.0
           volumeMounts:
             - name: secret-volume
               mountPath: /etc/secret-volume
@@ -729,7 +729,7 @@ spec:
         runAsNonRoot: true
       containers:
         - name: grpc-infra-backend-v2
-          image: registry.k8s.io/gateway-api/conformance/echo-basic:v0.1.0
+          image: registry.k8s.io/gateway-api/conformance/echo-basic:v0.2.0
           env:
             - name: POD_NAME
               valueFrom:
@@ -780,7 +780,7 @@ spec:
         runAsNonRoot: true
       containers:
         - name: grpc-infra-backend-v3
-          image: registry.k8s.io/gateway-api/conformance/echo-basic:v0.1.0
+          image: registry.k8s.io/gateway-api/conformance/echo-basic:v0.2.0
           env:
             - name: POD_NAME
               valueFrom:
@@ -908,7 +908,7 @@ spec:
         runAsNonRoot: true
       containers:
         - name: tcp-backend
-          image: registry.k8s.io/gateway-api/conformance/echo-basic:v0.1.0
+          image: registry.k8s.io/gateway-api/conformance/echo-basic:v0.2.0
           resources:
             requests:
               cpu: 10m
