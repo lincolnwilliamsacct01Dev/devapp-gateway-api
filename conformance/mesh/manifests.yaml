@@ -28,7 +28,7 @@ spec:
         runAsNonRoot: true
       containers:
         - name: echo
-          image: registry.k8s.io/gateway-api/conformance/echo-advanced:v0.1.0
+          image: registry.k8s.io/gateway-api/conformance/echo-advanced:v0.2.0
           imagePullPolicy: IfNotPresent
           args:
             - --tcp=9090
@@ -95,7 +95,7 @@ spec:
         runAsNonRoot: true
       containers:
         - name: echo
-          image: registry.k8s.io/gateway-api/conformance/echo-advanced:v0.1.0
+          image: registry.k8s.io/gateway-api/conformance/echo-advanced:v0.2.0
           imagePullPolicy: IfNotPresent
           args:
             - --tcp=9090
@@ -194,7 +194,7 @@ spec:
         runAsNonRoot: true
       containers:
         - name: echo
-          image: registry.k8s.io/gateway-api/conformance/echo-advanced:v0.1.0
+          image: registry.k8s.io/gateway-api/conformance/echo-advanced:v0.2.0
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
